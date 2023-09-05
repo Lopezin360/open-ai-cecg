@@ -1,4 +1,4 @@
-package br.com.open.ai.cecg.OpenAI;
+package br.com.open.ai.cecg.OpenAI.impl;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
