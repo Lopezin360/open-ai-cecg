@@ -6,10 +6,12 @@ import com.theokanning.openai.completion.chat.ChatCompletionRequest;
 import com.theokanning.openai.completion.chat.ChatMessage;
 import com.theokanning.openai.service.OpenAiService;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.List;
 
+@Component
 public class ChatStreamComponent {
     private final OpenAiService openAiService;
 
@@ -36,16 +38,15 @@ public class ChatStreamComponent {
         return sb.toString();
     }
 
-    public ChatCompletionRequest creatChatStreamRequest(List<ChatMessage> menssages) {
-       return ChatCompletionRequest
-               .builder()
-               .model(model)
-               .messages(menssages)
-               .n(1)
-               .maxTokens(maxtoken)
-               .logitBias(new HashMap<>())
-               .build();
+    public ChatCompletionRequest createChatStreamRequest(List<ChatMessage> menssages) {
+        return ChatCompletionRequest
+                .builder()
+                .model(model)
+                .messages(menssages)
+                .n(1)
+                .maxTokens(maxtoken)
+                .logitBias(new HashMap<>())
+                .build();
     }
-
-    }
+}
 
